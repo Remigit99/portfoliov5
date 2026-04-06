@@ -1,4 +1,5 @@
 import Header from "./components/Header";
+import { projectsInfo } from "./components/projectsInfo";
 import Me from "/me.jpg";
 
 const App = () => {
@@ -10,11 +11,17 @@ const App = () => {
         {/* ABOUT ME */}
         <section id="#about">
           <div className="mt-16">
-            <h1 className="flex justify-center font-main items-center text-4xl mb-12">About Me</h1>
+            <h1 className="flex justify-center font-main items-center text-4xl mb-12">
+              About Me
+            </h1>
 
             <div className="grid grid-cols-[1fr_2fr] gap-12 ">
               <div className="bg-bgBtn rounded-4xl overflow-hidden ">
-                <img src={Me} alt="Profile_picture" className="w-full h-full object-cover -rotate-2 hover:rotate-0 transition-transform duration-300" />
+                <img
+                  src={Me}
+                  alt="Profile_picture"
+                  className="w-full h-full object-cover -rotate-2 hover:rotate-0 transition-transform duration-300"
+                />
               </div>
 
               <div>
@@ -40,16 +47,51 @@ const App = () => {
         {/* PROJECTS */}
         <section id="#projects">
           <div className="mt-16">
-            <h1 className="flex justify-center font-main items-center text-4xl mb-12">Projects</h1>
+            <h1 className="flex justify-center font-main items-center text-4xl mb-12">
+              Projects
+            </h1>
 
-<div>
-  <article>
+            <div>
+              {projectsInfo.map((project) => (
+                <article key={project.id} className="mb-12  grid grid-cols-2 gap-8">
+                  <div className=" rounded-4xl overflow-hidden ">
+                    <img
+                      src={project.image}
+                      alt={`${project.title}_screenshot`}
+                      className="w-full h-120 object-cover rounded-2xl overflow-hidden hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
 
-  </article>
-</div>
+                  <div>
+                    <h2 className="text-2xl font-sec mb-4">{project.title}</h2>
+                    <p className="text-gray-400 leading-6 mb-4">
+                      {project.description}
+                    </p>
+                    <div className="flex gap-4 mb-4"></div>
+                    {project.technologies.map((tech, index) => (
+                      <span
+                        key={index}
+                        className="bg-bgBtn text-sm px-2 py-1 rounded-full"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                    <div className="mt-4">
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-bgBtn hover:underline"
+                      >
+                        View Project
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              ))}
             </div>
+          </div>
         </section>
-
       </div>
     </main>
   );

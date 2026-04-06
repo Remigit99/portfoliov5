@@ -4,23 +4,27 @@ import FbLogo8 from "/icons8_fb.png";
 // import LinkedInLogo from "/linkedin_logo.png";
 import GitHubLogo from "/icons8_github.png";
 import InstagramLogo from "/icons8_instagram.png";
+import  CiLinkedin  from "/icons8_linkedin.png";
+import  FaHtml5  from "/icons8_html5.png";
+import  FaCss3Alt  from "/icons8_css3.png";
+import  BsJavascript  from "/icons8_js.png";
+import  FaReact  from "/icons8_react.png";
+import  FaNodeJs  from "/icons8_nodejs.png";
+import  MongoDB  from "/icons8_mongodb.png";
 
-import { GoDownload } from "react-icons/go";
-import { RxInstagramLogo } from "react-icons/rx";
-import { RiTwitterXLine } from "react-icons/ri";
-import { FaFacebook } from "react-icons/fa6";
-import { CiLinkedin } from "react-icons/ci";
-import { IoLogoGithub } from "react-icons/io5";
-import { FaHtml5 } from "react-icons/fa6";
-import { FaCss3Alt } from "react-icons/fa6";
-import { BsJavascript } from "react-icons/bs";
-import { FaReact } from "react-icons/fa6";
-import { RiNextjsFill } from "react-icons/ri";
-import { BsTypescript } from "react-icons/bs";
-import { BiLogoSass } from "react-icons/bi";
-import { BiLogoRedux } from "react-icons/bi";
-import { BiLogoMongodb } from "react-icons/bi";
-import { FaNodeJs } from "react-icons/fa6";
+
+
+import  {GoDownload}  from "react-icons/go";
+// import  {RxInstagramLogo}  from "react-icons/rx";
+// import  {RiTwitterXLine}  from "react-icons/ri";
+// import  {FaFacebook}  from "react-icons/fa6";
+// import  {IoLogoGithub}  from "react-icons/io5";
+
+// import  RiNextjsFill  from "react-icons/ri";
+// import  BsTypescript  from "react-icons/bs";
+// import  BiLogoSass  from "react-icons/bi";
+// import  BiLogoRedux  from "react-icons/bi";
+// import  BiLogoMongodb  from "react-icons/bi";
 
 const Header = () => {
   return (
@@ -102,19 +106,26 @@ const Header = () => {
 
         <div className="absolute -right-96 top-12 flex gap-6">
           <div className="flex flex-col gap-4">
-            <FaHtml5 className="w-6 h-6 text-white" />
-            <FaCss3Alt className="w-6 h-6 text-white" />
-            <BsJavascript className="w-6 h-6 text-white" />
-            <FaReact className="w-6 h-6 text-white" />
-            <RiNextjsFill className="w-6 h-6 text-white" />
+            
+            <img src={FaHtml5} alt="HTML5 Logo" className="w-10 h-10" />
+            
+              <img src={FaCss3Alt} alt="CSS3 Logo" className="w-10 h-10" />
+            
+            <img src={BsJavascript} alt="JavaScript Logo" className="w-10 h-10" />
+            
+            <img src={FaReact} alt="React Logo" className="w-10 h-10" />
+            
+            {/* <img src={RiNextjsFill} alt="Next.js Logo" className="w-10 h-10" /> */}
+            <img src={FaNodeJs} alt="Node.js Logo" className="w-10 h-10" />
+            <img src={MongoDB} alt="MongoDB Logo" className="w-10 h-10" />
           </div>
-          <div className="flex flex-col gap-4">
+          {/* <div className="flex flex-col gap-4">
             <BsTypescript className="w-6 h-6 text-white" />
             <BiLogoSass className="w-6 h-6 text-white" />
             <BiLogoRedux className="w-6 h-6 text-white" />
             <BiLogoMongodb className="w-6 h-6 text-white" />
             <FaNodeJs className="w-6 h-6 text-white" />
-          </div>
+          </div> */}
         </div>
       </div>
     </header>
