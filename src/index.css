@@ -31,40 +31,15 @@
   --background-image-bgImgMain: url("/bg_haikei.svg");
 }
 
+@layer base {
+  section {
+    @apply pb-16 ;
+  }
+}
+
 body {
   font-family: "Montserrat", sans-serif;
-  /* background-color: var(--color-bgMain); */
-  /* background-image: url("/bg_haikei.png"); */
   color: var(--text-main);
 }
 
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-  --color-White: #ffffff;
-  --color-Neon-Blue: #00d9ff;
-  --color-Barbados-Bay: #066a65;
-  --color-Mako: #525657;
-  --color-Satin-Deep-Black: #1c2021;
-  --color-Sweet-Sour: #c8a938;
-  --color-Color-Me-Green: #7fba81;
-  --color-Caramel: #af720b;
-  --color-Pineapple: #50390e;
-  --color-Amulet-Gem: #067b8f;
-  --color-Mermaid-Net: #2dced2;
-  --color-Spanish-Grey: #989898;
-  --color-Burning-Tomato: #ef5133;
-  --color-Jade-of-Emeralds: #329a38;
-  --color-Dark-Serpent: #13351b;
-  --color-Black-is-Back: #0d1a15;
-}

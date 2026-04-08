@@ -1,21 +1,24 @@
 import Header from "./components/Header";
 import { projectsInfo } from "./components/projectsInfo";
 import Me from "/me.jpg";
+import GitHubLogo from "/icons8_github.png";
+import LiveWeb from "/icons8_internet.png";
+// import { img } from "motion/react-client";
 
 const App = () => {
   return (
     <main className="w-full h-full bg-bgImgMain bg-cover bg-center bg-no-repeat">
-      <div className="container mx-auto px-48 py-16 h-full">
+      <div className="container mx-auto px-4 md:px-16 lg:px-36 py-16 h-full">
         <Header />
 
         {/* ABOUT ME */}
         <section id="#about">
-          <div className="mt-16">
+          <div className="py-12 md:py-16">
             <h1 className="flex justify-center font-main items-center text-4xl mb-12">
               About Me
             </h1>
 
-            <div className="grid grid-cols-[1fr_2fr] gap-12 ">
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 md:gap-12 ">
               <div className="bg-bgBtn rounded-4xl overflow-hidden ">
                 <img
                   src={Me}
@@ -51,14 +54,17 @@ const App = () => {
               Projects
             </h1>
 
-            <div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
               {projectsInfo.map((project) => (
-                <article key={project.id} className="mb-12  grid grid-cols-2 gap-8">
+                <article
+                  key={project.id}
+                  className="bg-[#101e2464] rounded-4xl py-2 px-3"
+                >
                   <div className=" rounded-4xl overflow-hidden ">
                     <img
                       src={project.image}
                       alt={`${project.title}_screenshot`}
-                      className="w-full h-120 object-cover rounded-2xl overflow-hidden hover:scale-105 transition-transform duration-300"
+                      className="w-full h-60 object-contain rounded-2xl overflow-hidden hover:scale-105 transition-transform duration-300"
                     />
                   </div>
 
@@ -67,23 +73,36 @@ const App = () => {
                     <p className="text-gray-400 leading-6 mb-4">
                       {project.description}
                     </p>
-                    <div className="flex gap-4 mb-4"></div>
-                    {project.technologies.map((tech, index) => (
-                      <span
+                    <div className="flex gap-4 mb-4 flex-wrap">
+                      {project.technologies.map((tech, index) => (
+
+                        <img src={tech} alt=""
                         key={index}
-                        className="bg-bgBtn text-sm px-2 py-1 rounded-full"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                    <div className="mt-4">
+                         className="bg-white w-10 h-10 text-sm px-2 py-1 rounded-full"
+                        />
+                      ))}
+                    </div>
+                    <div className="flex gap-2 mt-6">
                       <a
-                        href={project.link}
+                        href={project.githubLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-bgBtn hover:underline"
+                        className=""
                       >
-                        View Project
+                        <img
+                          src={GitHubLogo}
+                          alt="GitHub"
+                          className="h-8 w-8"
+                        />
+                      </a>
+
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className=""
+                      >
+                        <img src={LiveWeb} alt="Live Web" className="h-8 w-8" />
                       </a>
                     </div>
                   </div>

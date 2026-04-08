@@ -12,30 +12,18 @@ import  FaReact  from "/icons8_react.png";
 import  FaNodeJs  from "/icons8_nodejs.png";
 import  MongoDB  from "/icons8_mongodb.png";
 
-
-
 import  {GoDownload}  from "react-icons/go";
-// import  {RxInstagramLogo}  from "react-icons/rx";
-// import  {RiTwitterXLine}  from "react-icons/ri";
-// import  {FaFacebook}  from "react-icons/fa6";
-// import  {IoLogoGithub}  from "react-icons/io5";
-
-// import  RiNextjsFill  from "react-icons/ri";
-// import  BsTypescript  from "react-icons/bs";
-// import  BiLogoSass  from "react-icons/bi";
-// import  BiLogoRedux  from "react-icons/bi";
-// import  BiLogoMongodb  from "react-icons/bi";
 
 const Header = () => {
   return (
     <header className="flex flex-col justify-center items-center gap-8">
-      <div className="flex flex-col justify-center items-center mb-12">
-        <h3 className="text-3xl font-sec text-gray-400">Hi, I am</h3>
-        <h1 className="text-5xl py-4 font-main">Aderemi Abiodun</h1>
-        <h3 className="text-3xl font-sec text-gray-400">Full Stack Developer</h3>
+      <div className="flex flex-col justify-center items-center mb-8 md:mb-12">
+        <h3 className="text-[24px] md:text-3xl font-sec text-gray-400">Hi, I am</h3>
+        <h1 className=" text-[32px] font-extrabold md:font-bold md:text-5xl py-4 font-main">Aderemi Abiodun</h1>
+        <h3 className="text-[24px] md:text-3xl font-sec text-gray-400">Full Stack Developer</h3>
       </div>
 
-      <div>
+      <div className="flex flex-col md:flex-row justify-center items-center gap-4">
         <a
           href="#contact"
           className="bg-transparent border-bgBtn px-4 py-2 border rounded-full outline-0 text-white"
@@ -53,7 +41,7 @@ const Header = () => {
       </div>
 
       <div className="relative">
-        <div className="absolute -left-96 top-12 flex flex-col gap-4">
+        <div className="hidden md:absolute -left-96 top-12 md:flex flex-col gap-4">
           <div>
             <a href="http://x.com" target="_blank" rel="noopener noreferrer">
               <img src={XLogo} alt="x_logo" className="h-10 w-10" />
