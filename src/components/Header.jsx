@@ -16,7 +16,7 @@ import  {GoDownload}  from "react-icons/go";
 
 const Header = () => {
   return (
-    <header className="flex flex-col justify-center items-center gap-8">
+    <header id="home" className="flex flex-col justify-center items-center gap-8">
       <div className="flex flex-col justify-center items-center mb-8 md:mb-12">
         <h3 className="text-[24px] md:text-3xl font-sec text-gray-400">Hi, I am</h3>
         <h1 className=" text-[32px] font-extrabold md:font-bold md:text-5xl py-4 font-main">Aderemi Abiodun</h1>
@@ -92,7 +92,7 @@ const Header = () => {
           />
         </div>
 
-        <div className="absolute -right-96 top-12 flex gap-6">
+        <div className="hidden absolute -right-96 top-12 lg:flex gap-6">
           <div className="flex flex-col gap-4">
             
             <img src={FaHtml5} alt="HTML5 Logo" className="w-10 h-10" />

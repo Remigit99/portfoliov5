@@ -37,6 +37,10 @@
   }
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   color: var(--text-main);
