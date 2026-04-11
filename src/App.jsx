@@ -8,16 +8,27 @@ import SocialContact from "./components/SocialContact";
 import FloatingNavbar from "./components/FloatingNavbar";
 // import { img } from "motion/react-client";
 
+import { motion } from "framer-motion";
+
 const App = () => {
   return (
     <main className="w-full h-full bg-bgImgMain bg-cover bg-center bg-no-repeat relative">
-      <FloatingNavbar/>
+      <FloatingNavbar />
 
       <div className="container mx-auto px-4 lg:px-36 py-16 h-full">
         <Header />
 
         {/* ABOUT ME */}
-        <section id="about">
+        <motion.section
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{
+            once: false,
+            amount: 0.2,
+          }}
+          id="about"
+        >
           <div className="py-12 md:py-16">
             <h1 className="flex justify-center font-main items-center text-4xl mb-12">
               About Me
@@ -50,10 +61,19 @@ const App = () => {
               </div>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* PROJECTS */}
-        <section id="projects">
+        <motion.section
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{
+            once: false,
+            amount: 0.2,
+          }}
+          id="projects"
+        >
           <div className="mt-16">
             <h1 className="flex justify-center font-main items-center text-4xl mb-12">
               Projects
@@ -80,10 +100,11 @@ const App = () => {
                     </p>
                     <div className="flex gap-4 mb-4 flex-wrap">
                       {project.technologies.map((tech, index) => (
-
-                        <img src={tech} alt=""
-                        key={index}
-                         className="bg-white w-10 h-10 text-sm px-2 py-1 rounded-full"
+                        <img
+                          src={tech}
+                          alt=""
+                          key={index}
+                          className="bg-white w-10 h-10 text-sm px-2 py-1 rounded-full"
                         />
                       ))}
                     </div>
@@ -115,24 +136,30 @@ const App = () => {
               ))}
             </div>
           </div>
-        </section>
+        </motion.section>
 
-          {/* CONTACT */}
-          <section id="contact">
-            <div className="py-12 md:py-16">
-              <h1 className="flex justify-center font-main items-center text-4xl mb-12">
-                Contact Me
-              </h1>
+        {/* CONTACT */}
+        <motion.section
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{
+            once: false,
+            amount: 0.2,
+          }}
+          id="contact"
+        >
+          <div className="py-12 md:py-16">
+            <h1 className="flex justify-center font-main items-center text-4xl mb-12">
+              Contact Me
+            </h1>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-36 place-content-center">
-                <SocialContact />
-                <ContactForm />
-              </div>
-
-              </div>
-
-</section>
-
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-36 place-content-center">
+              <SocialContact />
+              <ContactForm />
+            </div>
+          </div>
+        </motion.section>
       </div>
     </main>
   );

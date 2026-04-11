@@ -13,10 +13,17 @@ import  FaNodeJs  from "/icons8_nodejs.png";
 import  MongoDB  from "/icons8_mongodb.png";
 
 import  {GoDownload}  from "react-icons/go";
+import {motion} from "framer-motion";
 
 const Header = () => {
   return (
-    <header id="home" className="flex flex-col justify-center items-center gap-8">
+    <motion.header 
+    initial={{ opacity: 0, y: -50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1 }}
+    viewport={{once: true}}
+    
+    id="home" className="flex flex-col justify-center items-center gap-8">
       <div className="flex flex-col justify-center items-center mb-8 md:mb-12">
         <h3 className="text-[24px] md:text-3xl font-sec text-gray-400">Hi, I am</h3>
         <h1 className=" text-[32px] font-extrabold md:font-bold md:text-5xl py-4 font-main">Aderemi Abiodun</h1>
@@ -24,20 +31,24 @@ const Header = () => {
       </div>
 
       <div className="flex flex-col md:flex-row justify-center items-center gap-4">
-        <a
+        <motion.a
           href="#contact"
           className="bg-transparent border-bgBtn px-4 py-2 border rounded-full outline-0 text-white"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
         >
           Contact Me
-        </a>
-        <a
+        </motion.a>
+        <motion.a
           href="/src/assets/resume_pre.pdf"
           download
           className="bg-bgBtn text-black px-4 py-2 rounded-full outline-0 ml-4"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
         >
           <GoDownload className="inline-block mr-2" />
           Resume
-        </a>
+        </motion.a>
       </div>
 
       <div className="relative">
@@ -116,7 +127,7 @@ const Header = () => {
           </div> */}
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 };
 
